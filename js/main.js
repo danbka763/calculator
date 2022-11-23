@@ -5,6 +5,7 @@ const collectionButtons = [
   [",", "0", "/", "="],
 ];
 
+
 (() => {
   const buttonsForm = document.getElementById("buttons");
 
@@ -13,7 +14,7 @@ const collectionButtons = [
       (item) =>
         `<button 
            key="${item}" 
-           onClick="clickButton(${item})">
+           onClick="clickButton('${item}')">
           ${item}
          </button>`
     );

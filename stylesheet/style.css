@@ -36,6 +36,8 @@ body>div.calculator input {
   padding: 25px 10px;
   border-radius: 0;
   border: 1px solid rgb(190, 190, 190);
+  border-bottom: 3px solid rgb(190, 190, 190);
+  text-align: end;
 }
 
 body>div.calculator .line {
