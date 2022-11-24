@@ -1,6 +1,7 @@
 const input = document.getElementById("input");
 
 const calculate = () => {
+  // Проверяем входящие значения на наличие недопустимых данных
   if (input.value.replace(/[+-/*\d]/g, "")) {
     input.value = "";
     confirm("Замечены недействительные числа!");
@@ -8,6 +9,7 @@ const calculate = () => {
   }
   const result = eval(input.value.replace(/,/, "."));
 
+  // Сравниваем ответ с возможными ошибками
   if (["Infinity", "undefined", "null", "NaN"].indexOf(String(result)) === -1) {
     input.value = String(result).replace(/\./, ",");
   } else {
@@ -17,11 +19,13 @@ const calculate = () => {
 };
 
 const clickButton = (arg) => {
+  // Если очистка всего поля
   if (arg === "Clear") {
     input.value = "";
     return;
   }
 
+  // Если удаление последнего эл-та
   if (arg === "Delete") {
     if (input.value.length > 0) {
       input.value = input.value.slice(0, -1);
@@ -29,17 +33,15 @@ const clickButton = (arg) => {
     return;
   }
 
+  // Если значений больше 30 - выходим из ф-ии
   if (input.value.length > 30) {
     return;
   }
-
-  console.log(getLastNumber(input.value));
 
   if (arg !== "=") {
     if (!isNaN(Number(arg))) {
       input.value += arg;
     } else if (
-      // !isNaN(Number(input.value[input.value.length - 1])) &&
       input.value[input.value.length - 1] !== " "
     ) {
       if (arg === "," && getLastNumber(input.value).indexOf(",") !== -1) {
@@ -60,6 +62,7 @@ const clickButton = (arg) => {
   }
 };
 
+// Получение последнего значения
 const getLastNumber = (str) => {
   const args = ["+", "-", "*", "/"];
 
