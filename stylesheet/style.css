@@ -38,6 +38,7 @@ body>div.calculator input {
   border: 1px solid rgb(190, 190, 190);
   border-bottom: 3px solid rgb(190, 190, 190);
   text-align: end;
+  color: black;
 }
 
 body>div.calculator .line {

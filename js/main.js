@@ -3,8 +3,8 @@ const collectionButtons = [
   ["4", "5", "7", "-"],
   ["7", "8", "9", "*"],
   [",", "0", "/", "="],
+  ["Clear", "Delete"],
 ];
-
 
 (() => {
   const buttonsForm = document.getElementById("buttons");
